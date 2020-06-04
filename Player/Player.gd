@@ -47,3 +47,6 @@ func shoot():
 	var b = bullet_scene.instance()
 	b.start(self.global_position, rotation)
 	get_parent().add_child(b)
+	
+func dead():
+	$Ui/DeadScene.show()
