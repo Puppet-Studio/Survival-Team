@@ -8,11 +8,16 @@ export(Resource) var weapon
 var weapons = []
 
 
-func equip(weapon):
+func equip():
 	var wep = weapon.instance()
 	add_child(wep)
 	weapons.append(wep)
 
+func attack():
+	pass
+
+func _ready():
+	equip()
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
