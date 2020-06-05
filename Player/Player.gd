@@ -3,6 +3,15 @@ extends KinematicBody2D
 var velocity = Vector2()
 export var speed = 300 #max speed of the player
 onready var bullet_scene = preload("res://Player/Bullet.tscn")
+export(Resource) var weapon
+
+var weapons = []
+
+
+func equip(weapon):
+	var wep = weapon.instance()
+	add_child(wep)
+	weapons.append(wep)
 
 
 func _input(event):
