@@ -20,8 +20,9 @@ func _ready():
 	equip()
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		shoot()
+	if event.is_action_pressed("attack"):
+		var wep = weapon.instance()
+		wep.start()
 func _physics_process(delta):
 	#Movements
 	var input_vel = Vector2()
